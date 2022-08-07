@@ -21,7 +21,7 @@
 }
 
 .u-section-1 .u-countdown-1 {
-  margin: 30px auto 39px;
+  margin: 30px auto 0;
 }
 
 .u-section-1 .u-countdown-counter-1 {
@@ -120,7 +120,25 @@
   text-transform: uppercase;
 }
 
+.u-section-1 .u-btn-1 {
+  background-image: linear-gradient(to right, #f1b5b8, white);
+  border-style: solid;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  box-shadow: 0px 2px 6px 0 rgba(0,0,0,0.25);
+  margin: 30px auto 60px;
+  padding: 7px 21px;
+}
+
+.u-section-1 .u-icon-1 {
+  font-size: 0.7em;
+}
+
 @media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 378px;
+  }
+
   .u-section-1 .u-countdown-1 {
     margin-bottom: 119px;
   }
@@ -128,7 +146,7 @@
 
 @media (max-width: 991px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 352px;
+    min-height: 290px;
   }
 
   .u-section-1 .u-countdown-1 {
@@ -138,12 +156,12 @@
 
 @media (max-width: 767px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 264px;
+    min-height: 218px;
   }
 }
 
 @media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 166px;
+    min-height: 137px;
   }
 }
