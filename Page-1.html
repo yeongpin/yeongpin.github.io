@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="Page-1.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
-    <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
+    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
@@ -24,7 +24,53 @@
     <meta property="og:title" content="Page 1">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  </head>
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lfpg1YhAAAAALeE8DMve3AS3H0587Jpg3ahiqsG"></script>
+    <script>
+( function( grecaptcha, sitekey, actions ) {
+
+	var recaptcha = {
+
+		execute: function( action ) {
+			grecaptcha.execute(
+				sitekey,
+				{ action: action }
+			).then( function( token ) {
+				var forms = document.getElementsByTagName( 'form' );
+
+				for ( var i = 0; i < forms.length; i++ ) {
+					var fields = forms[ i ].getElementsByTagName( 'input' );
+
+					for ( var j = 0; j < fields.length; j++ ) {
+						var field = fields[ j ];
+
+						if ( 'recaptchaResponse' === field.getAttribute( 'name' ) ) {
+							field.setAttribute( 'value', token );
+							break;
+						}
+					}
+				}
+			} );
+		},
+
+		executeContact: function() {
+			recaptcha.execute( actions[ 'contact' ] );
+		}
+	};
+
+	grecaptcha.ready(
+		recaptcha.executeContact
+	);
+
+	document.addEventListener( 'change',
+		recaptcha.executeContact, false
+	);
+} )(
+	grecaptcha,
+	'6Lfpg1YhAAAAALeE8DMve3AS3H0587Jpg3ahiqsG',
+	{"contact":"contact"}
+);
+    </script>
+</head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-30 u-header u-header" id="sec-44f7"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="Home.html" data-page-id="1540012945" class="u-image u-logo u-image-1" data-image-width="1200" data-image-height="1200" title="Home">
           <img src="images/logo_transparent.png" class="u-logo-image u-logo-image-1">
@@ -57,8 +103,50 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-clearfix u-section-1" id="sec-f7f7">
-      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    <section class="u-clearfix u-image u-section-1" id="sec-f7f7" data-image-width="1920" data-image-height="1080">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-form u-grey-70 u-form-1">
+          <form action="https://formspree.io/f/mbjbrvzl" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" data-services="4bdcb03df5cba002d427f3f2aa0e235c">
+            <div class="u-form-group u-form-name">
+              <label for="name-d2e6" class="u-label">Discord ID</label>
+              <input type="text" placeholder="Enter your Discord ID" id="name-d2e6" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-email u-form-group">
+              <label for="email-d2e6" class="u-label">Email</label>
+              <input type="email" placeholder="Enter a valid email address" id="email-d2e6" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-message">
+              <label for="message-d2e6" class="u-label">Message</label>
+              <textarea placeholder="Enter your message" rows="4" cols="50" id="message-d2e6" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
+            </div>
+            <div class="u-form-group u-form-radiobutton u-form-group-4">
+              <div class="u-form-radio-button-wrapper">
+                <input type="radio" name="radiobutton" value="Item 1" required="required">
+                <label class="u-label" for="radiobutton">Item 1</label>
+                <br>
+                <input type="radio" name="radiobutton" value="Item 2" required="required">
+                <label class="u-label" for="radiobutton">Item 2</label>
+                <br>
+                <input type="radio" name="radiobutton" value="Item 3" required="required">
+                <label class="u-label" for="radiobutton">Item 3</label>
+                <br>
+              </div>
+            </div>
+            <div class="u-form-agree u-form-group u-form-group-5">
+              <input type="checkbox" id="agree-27c8" name="agree" class="u-agree-checkbox" required="">
+              <label for="agree-27c8" class="u-label">I accept the <a href="#">Terms of Service</a>
+              </label>
+            </div>
+            <div class="u-align-left u-form-group u-form-submit">
+              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+            <input type="hidden" value="" name="recaptchaResponse">
+          </form>
+        </div>
+      </div>
     </section>
     
     

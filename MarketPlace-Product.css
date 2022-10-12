@@ -416,84 +416,40 @@
     padding: 0;
   }
 
-  .u-section-1 .u-text-2 {
-    margin-top: 20px;
-  }
-
   .u-section-1 .u-icon-2 {
     padding: 0;
-  }
-
-  .u-section-1 .u-text-3 {
-    margin-top: 20px;
-  }
-
-  .u-section-1 .u-btn-3 {
-    margin-top: 19px;
   }
 
   .u-section-1 .u-icon-3 {
     padding: 0;
   }
 
-  .u-section-1 .u-text-4 {
-    margin-top: 20px;
-  }
-
   .u-section-1 .u-icon-4 {
     padding: 0;
-  }
-
-  .u-section-1 .u-text-5 {
-    margin-top: 20px;
   }
 
   .u-section-1 .u-icon-5 {
     padding: 0;
   }
 
-  .u-section-1 .u-text-6 {
-    margin-top: 20px;
-  }
-
   .u-section-1 .u-icon-6 {
     padding: 0;
-  }
-
-  .u-section-1 .u-text-7 {
-    margin-top: 20px;
   }
 
   .u-section-1 .u-icon-7 {
     padding: 0;
   }
 
-  .u-section-1 .u-text-8 {
-    margin-top: 20px;
-  }
-
   .u-section-1 .u-icon-8 {
     padding: 0;
-  }
-
-  .u-section-1 .u-text-9 {
-    margin-top: 20px;
   }
 
   .u-section-1 .u-icon-9 {
     padding: 0;
   }
 
-  .u-section-1 .u-text-10 {
-    margin-top: 20px;
-  }
-
   .u-section-1 .u-icon-10 {
     padding: 0;
-  }
-
-  .u-section-1 .u-text-11 {
-    margin-top: 20px;
   }
 }
 
@@ -572,10 +528,5 @@
     grid-template-columns: 100%;
     grid-auto-columns: calc(100% - 0px);
     width: 340px;
-  }
-
-  .u-section-1 .u-btn-21 {
-    margin-top: 2648px;
-    margin-bottom: 15px;
   }
 }
