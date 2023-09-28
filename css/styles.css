@@ -49,6 +49,7 @@
   /* Dark theme */
 }
 
+
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
   :root {
@@ -60,6 +61,7 @@
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
   }
+
 }
 
 /* Variables Dark theme */
@@ -76,6 +78,15 @@ body.dark-theme {
 }
 
 /* BASE */
+
+#plane{
+  color: #d39dff;
+  font-size: 70px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
 * {
   box-sizing: border-box;
   padding: 0;
@@ -1049,6 +1060,15 @@ img {
 
 /* For nav-menu devices */
 @media screen and (max-width: 768px) {
+
+  #plane{
+    color: #8600f4;
+    font-size: 0px;
+    position: absolute;
+    display: hidden;
+    justify-content: center;
+    align-items: center;
+    }
   .nav-menu {
     position: fixed;
     bottom: -100%;
