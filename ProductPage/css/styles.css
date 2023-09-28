@@ -1,5 +1,7 @@
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
 :root {
   --header-height: 3rem;
   /* Colors */
@@ -1272,6 +1274,8 @@ img {
     grid-template-columns: 1fr max-content;
     column-gap: 3rem;
   }
+
+  
 }
 
 /* For large devices */
@@ -1329,5 +1333,6 @@ img {
   .footer-links .footer-link {
     margin-left: var(--mb-1);
   }
+
 }
 /*# sourceMappingURL=styles.css.map */
