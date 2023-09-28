@@ -1,2 +1,1094 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=PersonalPage/index.html"></head><body></body></html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinNumber 個人主頁 | Portfolio</title>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="/static/main.css">
+
+</head>
+
+<body>
+      <!-- 禁用F12 -->
+    <script>
+        // disable right click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+     
+        document.onkeydown = function (e) {
+     
+            // disable F12 key
+            if(e.keyCode == 123) {
+                return false;
+            }
+     
+            // disable I key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+                return false;
+            }
+     
+            // disable J key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+     
+            // disable U key
+            if(e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+        }
+     
+    </script>
+
+
+    <div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@right-menu/core@latest"></script>
+  <script>
+    const rm = new RightMenu({
+      el: window
+    }, [
+      {
+        type: 'ul',
+        text: `關於 | About Yeongpin`,
+        children: [
+          {
+            type: 'li',
+            text: `最新@版本 | version@latest`,
+            disabled: true
+          },
+          { type: 'hr' },
+          {
+            type: 'li',
+            text: '<i class="fas fa-home nav-link-icon"></i>&nbsp&nbsp主頁 | Home',
+            callback: () => {
+        window.location.href = '#home'
+      }
+          },
+          {
+            type: 'li',
+            text: ' <i class="fas fa-user nav-link-icon"></i>&nbsp&nbsp&nbsp關於 | About',
+            callback: () => {
+        window.location.href = '#about'
+      }
+          },
+          {
+            type: 'li',
+            text: '<i class="fas fa-file-alt nav-link-icon"></i>&nbsp&nbsp&nbsp技能 | Skills',
+            callback: () => {
+        window.location.href = '#skills'
+      }
+          },
+          {
+            type: 'li',
+            text: '<i class="fas fa-briefcase nav-link-icon"></i>&nbsp&nbsp提供 | Services',
+            callback: () => {
+        window.location.href = '#services'
+      }
+          },
+          {
+            type: 'li',
+            text: '<i class="fas fa-image nav-link-icon"></i>&nbsp&nbsp作品 | Product',
+            callback: () => {
+        window.location.href = '#portfolio'
+      }
+          },
+          {
+            type: 'li',
+            text: '<i class="fas fa-envelope nav-link-icon"></i>&nbsp&nbsp聯絡 | Contact',
+            callback: () => {
+        window.location.href = '#contact'
+      }
+          },
+          {
+            type: 'li',
+            text: '<i class="uil uil-lottiefiles-alt nav-link-icon"></i>&nbsp&nbsp作品展示 | Works',
+            callback: () => {
+        window.location.href = '#contact'
+      }
+          },
+          { type: 'hr' },
+          {
+            type: 'li',
+            text: '📋 版權 | License',
+            callback: () => alert('版權 | CopyRight By PinNumber')
+          }
+        ]
+      }
+    ])
+    window.$docsify = {
+      name: '首页',
+      nameLink: '/right-menu/',
+      // 主题色
+      themeColor: '#6190e8',
+      // 入口文件
+      homepage: 'README.md',
+      // 右上方渲染github挂钟
+      repo: 'buuing/right-menu',
+      // 定制侧边栏
+      loadSidebar: true,
+      // 抓取目录渲染
+      maxLevel: 3,
+      subMaxLevel: 3,
+      // 开启封面页
+      coverpage: false,
+      // 切换页面后跳到顶部
+      auto2top: false,
+      // 小屏设备下合并导航栏到侧边栏
+      mergeNavbar: true,
+      // 开启导航栏
+      loadNavbar: false,
+      // 路由
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      // 搜索框
+      search: {
+        // 目录
+        paths: 'auto',
+        // 默认文字
+        placeholder: '搜索',
+        // 404显示
+        noData: '找不到结果'
+      },
+      executeScript: true,
+      // mini sandbox 公共配置
+      sandboxOptions: {
+        resource: {
+          css: `
+            .right-menu {
+              height: 100px;
+              background: #ccc;
+              text-align: center;
+              line-height: 100px;
+            }
+          `,
+          js: `
+            window.options = [
+              { type: 'li', text: 'asd' }
+            ]
+          `,
+          jsLibs: ['https://cdn.jsdelivr.net/npm/@right-menu/core@latest']
+        },
+        defaultConfig: {
+          height: '350px',
+          editorRange: '50%',
+        },
+      },
+    }
+  </script>
+
+
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav-logo">PinNumber</a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list grid">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active-link">
+                            <i class="fas fa-home nav-link-icon"></i> Home 
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <i class="fas fa-user nav-link-icon"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">
+                            <i class="fas fa-file-alt nav-link-icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">
+                            <i class="fas fa-briefcase nav-link-icon"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">
+                            <i class="fas fa-image nav-link-icon"></i> Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <i class="fas fa-envelope nav-link-icon"></i> Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/ProductPage/index.html" class="nav-link">
+                            <i class="uil uil-lottiefiles-alt nav-link-icon"></i> Works
+                        </a>
+                    </li>
+                </ul>
+                <i class="fas fa-times nav-close" id="nav-close"></i>
+            </div>
+            <div class="nav-btns">
+
+                <!-- Theme change button -->
+                <i class="fas fa-moon change-theme" id="theme-button"></i>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+        <!-- HOME -->
+        <section class="home section" id="home">
+            <div class="home-container container grid">
+                <div class="home-content grid">
+                    <div class="home-social">
+                        <a href="https://www.youtube.com/@PinNumberStudio" target="_blank" class="home-social-icon">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+                        <a href="https://www.unrealengine.com/marketplace/en-US/profile/PinNumber" target="_blank" class="home-social-icon">
+                            <i class="uil uil-globe"></i>
+                        </a>
+                        <a href="https://paypal.me/yeongpin" target="_blank" class="home-social-icon">
+                            <i class="uil uil-paypal"></i>
+                        </a>
+                    </div>
+                    <div class="home-img">
+                        <svg class="home-blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                                <image class="home-blob-img" x='12' y='18' xlink:href="img/perfil.png" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="home-data">
+                        <h1 class="home-data-title">你好，<br>我叫詹雍彬<br>Hi, I'am YeongPin</h1>
+                        <h3 class="home-data-subtitle">虛幻引擎開發者<br>Unreal Engine Developer</h3>
+                        <p class="home-data-description">擁有豐富的虛幻引擎經驗和開發知識，可產出高品質的作品<br>High level experience in Unreal Engine and development knowledge,
+                            producing quality work.</p>
+                        <a href="#contact" class="button button-flex">
+                            聯絡我 | Contact Me <i class="fab fa-telegram-plane button-icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-scroll">
+                    <a href="#about" class="home-scroll-button button-flex">
+                        <span class="home-scroll-button-name">下滑 | Scroll down</span>
+                        <i class="fas fa-arrow-down home-scroll-button-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about section" id="about">
+            <h2 class="section-title">關於我 | About Me</h2>
+            <span class="section-subtitle">自我介紹 | My introduction</span>
+
+            <div class="about-container container grid">
+                <div class="about-container-img">
+                    <img src="img/about.png" alt="About" class="about-container-imgAlt">
+                </div>
+
+                <div class="about-container-data">
+                    <p class="about-container-data-description">虛幻引擎開發人員，擁有豐富的知識和多年的經驗，從事 C++、Java 和 UI/UX 設計，交付高品質的工作<br>
+                        Unreal Engine developer, withextensive knowledge years of experience, working in C++ , Java and UI / UX design, delivering quality work</p>
+
+                    <div class="about-container-data-info">
+                        <div>
+                            <span class="about-container-data-info-title">03+</span>
+                            <span class="about-container-data-name">年 | Years <br> 經驗 | experience</span>
+                        </div>
+                        <div>
+                            <span class="about-container-data-info-title">30+</span>
+                            <span class="about-container-data-name">完整 | Completed <br> 作品 | project</span>
+                        </div>
+                        <div>
+                            <span class="about-container-data-info-title">02+</span>
+                            <span class="about-container-data-name">企業 | Companies <br> 上班 | worked</span>
+                        </div>
+                    </div>
+                    <div class="about-buttons">
+                        <a download="" href="pdf/Alexa-Cv.pdf" class="button button-flex">
+                           下載履歷 | Download CV <i class="fas fa-download button-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">技能 | Skills</h2>
+            <span class="section-subtitle">我的技術水平 | My technical level</span>
+
+            <div class="skills-container container grid">
+                <div>
+                    <!-- SKILLS 1 -->
+                    <div class="skills-container-content skills-open">
+
+                        <div class="skills-container-header">
+                            <i class="fas fa-code skills-icon"></i>
+                            <div>
+                                <h1 class="skills-title">虛幻引擎 | Unreal Engine Developer</h1>
+                                <span class="skills-subtitle">超過3年 | More than 3 years</span>
+                            </div>
+                            <i class="fas fa-angle-down skills-arrow"></i>
+                        </div>
+
+                        <div class="skills-list grid">
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">藍圖 | Blueprint</h3>
+                                    <span class="skills-number">90%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-html"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">界面UI | Widget UI</h3>
+                                    <span class="skills-number">100%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-css"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">C++</h3>
+                                    <span class="skills-number">60%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-js"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">服務端 | Replicated Server</h3>
+                                    <span class="skills-number">85%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-react"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SKILLS 2 -->
+                    <div class="skills-container-content skills-close">
+
+                        <div class="skills-container-header">
+                            <i class="fas fa-server skills-icon"></i>
+                            <div>
+                                <h1 class="skills-title">前端開發 | Front-End Developer</h1>
+                                <span class="skills-subtitle">超過2年 | More than 2 years</span>
+                            </div>
+                            <i class="fas fa-angle-down skills-arrow"></i>
+                        </div>
+
+                        <div class="skills-list grid">
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">React</h3>
+                                    <span class="skills-number">80%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-php"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Css</h3>
+                                    <span class="skills-number">70%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-node"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Html</h3>
+                                    <span class="skills-number">90%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-firebase"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Js</h3>
+                                    <span class="skills-number">55%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-python"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <!-- SKILLS 3 -->
+                    <div class="skills-container-content skills-close">
+
+                        <div class="skills-container-header">
+                            <i class="fas fa-swatchbook skills-icon"></i>
+                            <div>
+                                <h1 class="skills-title">設計 | Designer</h1>
+                                <span class="skills-subtitle">超過3年 | More than 3 years</span>
+                            </div>
+                            <i class="fas fa-angle-down skills-arrow"></i>
+                        </div>
+
+                        <div class="skills-list grid">
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Photoshop</h3>
+                                    <span class="skills-number">90%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-figma"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Sony Vegas</h3>
+                                    <span class="skills-number">85%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-sketch"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Pixso</h3>
+                                    <span class="skills-number">85%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage skills-ps"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- QUALIFICATION -->
+        <section class="qualification section">
+            <h2 class="section-title">資質 | Qualification</h2>
+            <span class="section-subtitle">我的個人資質 | My personel journey</span>
+
+            <div class="qualification-container container">
+                <div class="qualification-tabs">
+                    <div class="qualification-tabs-button button-flex qualification-active" data-target="#education">
+                        <i class="fas fa-graduation-cap qualification-icon"></i>
+                        &nbsp&nbsp&nbsp學業<br>Education
+                    </div>
+                    <div class="qualification-tabs-button button-flex" data-target="#work">
+                        <i class="fas fa-briefcase qualification-icon"></i>
+                        &nbsp&nbsp工作<br>&nbsp&nbspWork
+                    </div>
+                </div>
+                <div class="qualification-sections">
+                    <!-- QUALIFICATION CONTENT 1 -->
+                    <div class="qualification-content qualification-active" data-content id="education">
+                        <!-- QUALIFICATION 1 -->
+                        <div class="qualification-data">
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">小學 | Primary School</h3>
+                                <span class="qualification-subtitle">新華小學 | SJKC SIN WAH</span>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2006 - 2011
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <span class="qualification-line"></span>
+                            </div>
+                        </div>
+                        <!-- QUALIFICATION 2 -->
+                        <div class="qualification-data">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <span class="qualification-line"></span>
+                            </div>
+
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">文商理科 | Arts, Commerce and Science</h3>
+                                <span class="qualification-subtitle">峇株吧轄華仁中學 | Chinese High School</span>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2011 - 2014
+                                </div>
+                            </div>
+                        </div>
+                        <!-- QUALIFICATION 3 -->
+                        <div class="qualification-data">
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">商業學 | Business</h3>
+                                <span class="qualification-subtitle">峇株吧轄華仁中學 | Chinese High School</span>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2014 - 2017
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <span class="qualification-line"></span>
+                            </div>
+                        </div>
+                        <!-- QUALIFICATION 4 -->
+                        <div class="qualification-data">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <!-- <span class="qualification-line"></span> -->
+                            </div>
+
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">數位多媒體 | Digital Multimedia</h3>
+                                <span class="qualification-subtitle">萬能科技大學 | Vanung University</span>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2018 - 2022
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QUALIFICATION CONTENT 2 -->
+                    <div class="qualification-content" data-content id="work">
+                        <!-- QUALIFICATION 1 -->
+                        <div class="qualification-data">
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">Java Coding</h3>
+                                <span class="qualification-subtitle">For Minecraft Server Plugin</span>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2014 - 2017
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <span class="qualification-line"></span>
+                            </div>
+                        </div>
+                        <!-- QUALIFICATION 2 -->
+                        <div class="qualification-data">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <span class="qualification-line"></span>
+                            </div>
+
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">Freelancing</h3>
+                                <span class="qualification-subtitle">For Unreal / Photoshop</span>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2018 - 2022
+                                </div>
+                            </div>
+                        </div>
+                        <!-- QUALIFICATION 3 -->
+                        <div class="qualification-data">
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">Unreal Engine Engineer</h3>
+                                <span class="qualification-subtitle">Reno Studio</span>
+                                <a href="https://reno-studios.com/" target="_blank" class="home-social-icon">
+                                    <i class="uil uil-angle-right"></i>
+                                </a>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2017 - 2019
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <!-- <span class="qualification-line"></span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services section" id="services">
+            <h2 class="section-title">提供 | Services</h2>
+            <span class="section-subtitle">我可以提供什麼 | What i offer</span>
+
+            <div class="services-container container grid">
+                <!-- SERVICES 1 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">虛幻引擎製作 <br>Unreal Engine <br> Develop</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">虛幻引擎製作 <br>Unreal Engine <br> Develop</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>遊戲系統製作 <br>I develop the game system.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>遊戲UI製作 <br>UI Widget Design development.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>服務器功能 <br> Server Function.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>C++.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 2 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-arrows-alt-h services-icon"></i>
+                        <h3 class="services-title">前端開發<br> Front Web <br> Developer</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">前端開發<br> Front Web Developer</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>開發使用者介面 <br>I develop the user interface.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>網頁設計 <br>Web page development.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>創建 ux 元素交互 <br>I create ux element interactions.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>對貴公司品牌的定位 <br>I position your company brand.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 3 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-pencil-alt services-icon"></i>
+                        <h3 class="services-title">影片剪輯/修圖<br> Edit Video / Photoshop</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">影片剪輯/修圖<br> Edit Video / Photoshop</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>能夠順暢的剪輯需求 <br>I capable of smooth editing needs.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>會使用PS進行編輯 <br>I can use ps to edit.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 4 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">UI/UX <br> Designer</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">UI/UX <br> Designer</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>I develop the user interface.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>Web page development.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>I create ux element interactions.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>I position your company brand.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section-title">作品 | Product</h2>
+            <span class="section-subtitle">我的原創作品 | Mine Works</span>
+
+            <div class="portfolio-container container swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- PORTFOLIO 1 -->
+                    <div class="portfolio-content grid swiper-slide">
+                        <img src="img/portfolio1.jpg" alt="Portfolio" class="portfolio-img">
+                        <div class="portfolio-data">
+                            <h3 class="portfolio-title">Unreal Engine Product</h3>
+                            <p class="portfolio-description">Made With Blueprint / C++.</p>
+                            <a href="https://www.unrealengine.com/marketplace/en-US/profile/PinNumber" target="_blank" class="button button-flex button-small portfolio-button">
+                                View Product <i class="fas fa-arrow-right button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- PORTFOLIO 2 -->
+                    <div class="portfolio-content grid swiper-slide">
+                        <img src="img/portfolio2.jpg" alt="Portfolio" class="portfolio-img">
+                        <div class="portfolio-data">
+                            <h3 class="portfolio-title">Minecraft Java Plugin Product</h3>
+                            <p class="portfolio-description">Made With Java.</p>
+                            <a href="https://www.mcbbs.net/home.php?mod=space&uid=1698728" target="_blank" class="button button-flex button-small portfolio-button">
+                                View Product <i class="fas fa-arrow-right button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- PORTFOLIO 3 -->
+                    <div class="portfolio-content grid swiper-slide">
+                        <img src="img/portfolio3.jpg" alt="Portfolio" class="portfolio-img">
+                        <div class="portfolio-data">
+                            <h3 class="portfolio-title">Some Art / Video</h3>
+                            <p class="portfolio-description">In My Youtube.</p>
+                            <a href="https://www.youtube.com/@PinNumberStudio"  target="_blank" class="button button-flex button-small portfolio-button">
+                                PinNumber <i class="fas fa-arrow-right button-icon"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UC0P9uwUY5XcwUDtsq62MaJQ" target="_blank" class="button button-flex button-small portfolio-button">
+                                Pin_CY <i class="fas fa-arrow-right button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Arrow -->
+                <div class="swiper-button-next">
+                    <i class="fas fa-angle-right swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="fas fa-angle-left swiper-portfolio-icon"></i>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                
+            </div>
+        </section>
+
+        <!-- PROJECT IN MIND -->
+        <section class="project section">
+            <div class="project-bg">
+                <div class="project-container container grid">
+                    <div class="project-data">
+                        <h2 class="project-bg-title">需要了解更多?<br>Need to know more</h2>
+                        <p class="project-bg-description">馬上聯絡我了解更多 <br>Contact me now to learn more</p>
+                        <a href="#contact" class="button button-flex button-white">
+                            聯絡 | Contact Me
+                            <i class="fab fa-telegram-plane project-icon button-icon"></i>
+                        </a>
+                    </div>
+                    <img src="img/project.png" alt="Project img" class="project-bg-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonial section">
+            <h2 class="section-title">評價 | Review</h2>
+            <span class="section-subtitle">我真實客戶的評價 | My client saying <br>評論可滑動 | Review Can Swap Move</span>
+
+            <div class="testimonial-container container swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- TESTIMONIAL 1 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial1.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">MikeTheTech</h3>
+                                    <span class="testimonial-client">UE Marketplace</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+
+                        </div>
+                        <p class="testimonial-description">該功能不僅按預期運作且運作良好，而且開發人員在 Discord 中很活躍，並且超越並幫助我實現遊戲。 絕對會推薦這個產品。<br>
+                            Not only does this function as expected and work GREAT, but the developer is active in Discord and went above and WELL BEYOND to help me with my game implementation. 
+                            Would absolutely recommend this product. 
+                        </p>
+                    </div>
+                    <!-- TESTIMONIAL 2 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial2.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">ozCROM</h3>
+                                    <span class="testimonial-client">UE Client</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-description">一個出色的插件 - 準備好進行我的頭腦風暴/開發，作為學習工具，或直接進入專案以獲得現成的系統。 非常容易使用。 乾杯。<br>
+                            A brilliant plugin - ready to go for my brainstorming/developing, as a learning tool, or straight into the project for a ready made system. Very easy to use. Cheers.
+                        </p>
+                    </div>
+                    <!-- TESTIMONIAL 3 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial3.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">Raul Harris</h3>
+                                    <span class="testimonial-client">Unreal Review</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-description">在乾淨的項目中完美開箱即用。 開發人員反應非常靈敏且樂於助人——我透過 Discord 聯繫了他，他幫助我解決了我遇到的任何問題。 會推薦。<br>
+                            Works perfectly out of the box in a clean project. Developer is very responsive and helpful too -- 
+                            I contacted him via the Discord and he helped me solve any questions I had. Would recommend. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Add Pagination -->
+                
+            </div>
+        </section>
+
+        
+
+        <!-- CONTACT ME -->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">聯絡我 | Contact Me</h2>
+            <span class="section-subtitle">保持聯絡 | Get in touch</span>
+
+            <div class="contact-container container grid">
+                <div class="contact-items">
+                    <div class="contact-information">
+                        <i class="fas fa-phone contact-icon"></i>
+
+                        <div>
+                            <h3 class="contact-title">打給我 | Call Me</h3>
+                            <span class="contact-subtitle">隱私 | Private</span>
+                        </div>
+                    </div>
+                    <div class="contact-information">
+                        <i class="far fa-envelope contact-icon"></i>
+
+                        <div>
+                            <h3 class="contact-title">郵件 | Email</h3>
+                            <span class="contact-subtitle">yeongpin1999@gmail.com <br> pinumber529@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-information">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+
+                        <div>
+                            <h3 class="contact-title">目前位置 | Location</h3>
+                            <span class="contact-subtitle">台灣 | Taiwan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact-form grid">
+                    <div class="contact-inputs grid">
+                        <div class="contact-content">
+                            <label for="" class="contact-label">稱呼 | Name</label>
+                            <input type="text" class="contact-input">
+                        </div>
+                        <div class="contact-content">
+                            <label for="" class="contact-label">郵箱 | Email</label>
+                            <input type="email" class="contact-input">
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="contact-content">
+                            <label for="" class="contact-label">標題 | Title</label>
+                            <input type="text" class="contact-input">
+                        </div>
+                        <div class="contact-content">
+                            <label for="" class="contact-label">信息 | Message</label>
+                            <textarea style="resize: none;" rows="5" class="contact-input"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <div class="contact-button">
+                    <a href="#" class="button button-flex">
+                        發送信息 | Send Message <i class="fab fa-telegram-plane button-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-container container grid">
+                <div class="footer-texts">
+                    <h1 class="footer-title">PinNumber</h1>
+                    <span class="footer-subtitle">虛幻引擎開發者 | Unreal Engine Developer</span>
+                </div>
+
+                <ul class="footer-links">
+                    <li>
+                        <a href="#services" class="footer-link">提供 | Services</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="footer-link">作品 | Product</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="footer-link">聯絡 | Contact Me</a>
+                    </li>
+                </ul>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook-f footer-social"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <i class="fab fa-twitter footer-social"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fab fa-instagram footer-social"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copy">&#169; PinNuber. 版權所有 盜版必究 1999-2099 <br>&#169; PinNuber. All right reserved 1999-2099</p>
+        </div>
+    </footer>
+
+    <!-- SCROLL TOP -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up scrollup-icon"></i>
+    </a>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/027d3564f6.js" crossorigin="anonymous"></script>
+
+    <!-- SWIPER JS -->
+    <script src="js/swiper-bundle.js"></script>
+
+
+    <!-- MAIN JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
