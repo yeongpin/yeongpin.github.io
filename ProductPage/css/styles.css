@@ -84,6 +84,15 @@ body.dark-theme {
   margin: 0;
 }
 
+#plane{
+  color: #d39dff;
+  font-size: 70px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
 html {
   scroll-behavior: smooth;
 }
@@ -1075,6 +1084,14 @@ img {
   .services-container .services-content {
     padding: 1rem 0 1rem 1rem;
   }
+  #plane{
+    color: #d39dff;
+    font-size: 0px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
 }
 
 /* For medium devices */
