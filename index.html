@@ -17,6 +17,9 @@
 
     <link rel="stylesheet" href="static/main.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -1088,33 +1091,57 @@
                     </div>
                 </div>
 
-                <form action="" class="contact-form grid">
+
+
+                <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+                <script>
+                    function sendEmail(){
+                        Email.send({
+                        Host : "smtp.elasticemail.com",
+                        Username : "PinNumber@Studio.com",
+                        Password : "E04BAF76C797DA414EC6A7AD978C52E14298",
+                        From : document.getElementById("email").value,
+                        To : "pinumber529@gmail.com",
+                        Subject : "This is the subject",
+                        Body : "And this is the body"
+                    }).then(
+                    message => alert(message)
+                    );
+                    }
+                </script>
+
+                <form action="https://formsubmit.co/9943efec187bf2313f666d0d6558a57f"  onsubmit="reset();" method="POST" target="_blank" reset()>
                     <div class="contact-inputs grid">
                         <div class="contact-content">
-                            <label for="" class="contact-label">稱呼 | Name</label>
-                            <input type="text" class="contact-input">
+                            <label for=""class="contact-label">稱呼 | Name</label>
+                            <input type="text" name="name"  class="contact-input" required>
                         </div>
                         <div class="contact-content">
                             <label for="" class="contact-label">郵箱 | Email</label>
-                            <input type="email" class="contact-input">
+                            <input type="email" name="email" class="contact-input" required>
                         </div>
                     </div>
+                    <br>
                     <div class="grid">
                         <div class="contact-content">
-                            <label for="" class="contact-label">標題 | Title</label>
-                            <input type="text" class="contact-input">
+                            <label for=""class="contact-label">標題 | Title</label>
+                            <input type="text"  name="title" class="contact-input" required>
                         </div>
                         <div class="contact-content">
                             <label for="" class="contact-label">信息 | Message</label>
-                            <textarea style="resize: none;" rows="5" class="contact-input"></textarea>
+                            <textarea name="msg"  style="resize: none;" rows="5" class="contact-input"required></textarea>
                         </div>
                     </div>
+                    <br>
+
+                    <div class="contact-button">
+                        <button type="submit" class="button button-flex">
+                            發送信息 | Send Message <i class="fab fa-telegram-plane button-icon"></i>
+                        </button>
+                    </div>
                 </form>
-                <div class="contact-button">
-                    <a href="#" class="button button-flex">
-                        發送信息 | Send Message <i class="fab fa-telegram-plane button-icon"></i>
-                    </a>
-                </div>
+
             </div>
         </section>
     </main>
