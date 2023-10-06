@@ -98,8 +98,14 @@
             text: '<i class="fas fa-file-alt nav-link-icon"></i>&nbsp&nbsp&nbsp其他 | Other',
             callback: () => {
         window.location.href = '#portfolio'
-      }
+      },
           },
+          {
+            type: 'li',
+            text: '<i class="uil uil-lottiefiles-alt nav-link-icon"></i>&nbsp&nbsp數據 | Data',
+            callback: () => {
+        window.location.href = '/DataPage/index.html'
+      }},
           { type: 'hr' },
           {
             type: 'li',
@@ -227,7 +233,13 @@
                             <i class="fas fa-image nav-link-icon"></i> OtherProduct
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/DataPage/index.html" class="nav-link">
+                            <i class="uil uil-lottiefiles-alt nav-link-icon"></i> Data
+                        </a>
+                    </li>
                 </ul>
+
                 <i class="fas fa-times nav-close" id="nav-close"></i>
             </div>
             <div class="nav-btns">

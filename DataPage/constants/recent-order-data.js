@@ -1,0 +1,51 @@
+const RECENT_ORDER_DATA = [
+  {
+    productName: "Multiplayer Pro Achievement System",
+    productNumber: "85631",
+    payment: "Review",
+    status: "Success",
+    statusColor: "success",
+  },
+  {
+    productName: "Multiplayer Open World Portal System V2",
+    productNumber: "36378",
+    payment: "Review",
+    status: "Success",
+    statusColor: "success",
+  },
+  {
+    productName: "Multiplayer Ability System",
+    productNumber: "49347",
+    payment: "Paid",
+    status: "Success",
+    statusColor: "success",
+  },
+  {
+    productName: "Multiplayer Introduce Component V2",
+    productNumber: "96996",
+    payment: "Paid",
+    status: "Success",
+    statusColor: "success",
+  },
+  {
+    productName: "Multiplayer Shop Template V2",
+    productNumber: "22821",
+    payment: "Buy",
+    status: "Delivered",
+    statusColor: "primary",
+  },
+  {
+    productName: "Multiplayer Daily Reward",
+    productNumber: "81475",
+    payment: "Due",
+    status: "Pending",
+    statusColor: "danger",
+  },
+  {
+    productName: "Multiplayer Chat Time System",
+    productNumber: "00482",
+    payment: "Waiting",
+    status: "Pending",
+    statusColor: "warning",
+  },
+];
