@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinNumber 個人主頁 | Portfolio</title>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+
+    <link rel="stylesheet" href="dist/charts.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="static/main.css">
+
+
+
+</head>
+
+<body>
+      <!-- 禁用F12 -->
+    <script>
+        // disable right click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+     
+        document.onkeydown = function (e) {
+     
+            // disable F12 key
+            if(e.keyCode == 123) {
+                return false;
+            }
+     
+            // disable I key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+                return false;
+            }
+     
+            // disable J key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+     
+            // disable U key
+            if(e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+        }
+     
+    </script>
+
+
+    <div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@right-menu/core@latest"></script>
+  <script>
+    const rm = new RightMenu({
+      el: window
+    }, [
+      {
+        type: 'ul',
+        text: `關於 | About Yeongpin`,
+        children: [
+          {
+            type: 'li',
+            text: `最新@版本 | version@latest`,
+            disabled: true
+          },
+          { type: 'hr' },
+          {
+            type: 'li',
+            text: '<i class="fas fa-home nav-link-icon"></i>&nbsp&nbsp主頁 | Home',
+            callback: () => {
+        window.location.href = '../index.html'
+      }
+          },
+          {
+            type: 'li',
+            text: '<i class="fas fa-file-alt nav-link-icon"></i>&nbsp&nbsp&nbsp日誌 | Change Log',
+            callback: () => {
+        window.location.href = '#changelog'
+      }
+          },
+          { type: 'hr' },
+          {
+            type: 'li',
+            text: '📋 版權 | License',
+            callback: () => alert('版權 | CopyRight By PinNumber')
+          }
+        ]
+      }
+    ])
+    window.$docsify = {
+      name: '首页',
+      nameLink: '/right-menu/',
+      // 主题色
+      themeColor: '#6190e8',
+      // 入口文件
+      homepage: 'README.md',
+      // 右上方渲染github挂钟
+      repo: 'buuing/right-menu',
+      // 定制侧边栏
+      loadSidebar: true,
+      // 抓取目录渲染
+      maxLevel: 3,
+      subMaxLevel: 3,
+      // 开启封面页
+      coverpage: false,
+      // 切换页面后跳到顶部
+      auto2top: false,
+      // 小屏设备下合并导航栏到侧边栏
+      mergeNavbar: true,
+      // 开启导航栏
+      loadNavbar: false,
+      // 路由
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      // 搜索框
+      search: {
+        // 目录
+        paths: 'auto',
+        // 默认文字
+        placeholder: '搜索',
+        // 404显示
+        noData: '找不到结果'
+      },
+      executeScript: true,
+      // mini sandbox 公共配置
+      sandboxOptions: {
+        resource: {
+          css: `
+            .right-menu {
+              height: 100px;
+              background: #ccc;
+              text-align: center;
+              line-height: 100px;
+            }
+          `,
+          js: `
+            window.options = [
+              { type: 'li', text: 'asd' }
+            ]
+          `,
+          jsLibs: ['https://cdn.jsdelivr.net/npm/@right-menu/core@latest']
+        },
+        defaultConfig: {
+          height: '350px',
+          editorRange: '50%',
+        },
+      },
+    }
+  </script>
+
+<div id="plane">
+    <i class="uil uil-telegram-alt" aria-hidden="true"></i> 
+    </div>
+
+    <script>
+        let plane=document.getElementById('plane');
+        let deg=0,ex=0,ey=0,vx=0,vy=0,count=0;
+        window.addEventListener('mousemove',(e)=>{
+            ex=e.x-plane.offsetLeft-plane.clientWidth/2;
+            ey=e.y-plane.offsetTop-plane.clientHeight/2;
+            deg=360*Math.atan(ey/ex)/(2*Math.PI)+45;
+            if(ex<0){
+                deg+=180;
+            }
+            count=0;
+        })
+        function draw(){
+            plane.style.transform='rotate('+deg+'deg)';
+            if(count<100){
+                vx+=ex/100;
+                vy+=ey/100;
+            }
+            plane.style.left=vx+'px';
+            plane.style.top=vy+'px';
+            count++;
+        }
+        setInterval(draw,1);
+        </script>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav-logo">PinNumber</a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list grid">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link active-link">
+                            <i class="fas fa-home nav-link-icon"></i> Home 
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#changelog" class="nav-link">
+                            <i class="fas fa-user nav-link-icon"></i> ChangeLog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/DataPage/index.html" class="nav-link">
+                            <i class="uil uil-lottiefiles-alt nav-link-icon"></i> Data
+                        </a>
+                    </li>
+                </ul>
+
+                <i class="fas fa-times nav-close" id="nav-close"></i>
+            </div>
+            <div class="nav-btns">
+
+                <!-- Theme change button -->
+                <i class="fas fa-moon change-theme" id="theme-button"></i>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+
+
+        <!-- img -->
+        <section class="portfolio section" id="img">
+            <h2 class="section-title">作品圖片 | Product IMG</h2>
+            <span class="section-subtitle">我的原創作品 | Mine Works</span>
+
+            <div class="portfolio-container container swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1069.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1070.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1071.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1072.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1073.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1074.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1075.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1076.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1077.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1078.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1079.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                    <!-- img -->
+                    <div class="portfolio-content test swiper-slide" >
+                        <img src="BromptonController/IMG_1080.PNG" alt="Portfolio" class="c-img">
+                    </div>
+                </div>
+                <!-- Add Arrow -->
+                <div class="swiper-button-next">
+                    <i class="fas fa-angle-right swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="fas fa-angle-left swiper-portfolio-icon"></i>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services section" id="changelog">
+            <h2 class="section-title">更新日誌 | Change Log</h2>
+            <span class="section-subtitle">版本更新 | Version Update</span>
+
+            <div class="services-container container grid">
+                <!-- SERVICES 1 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">首發 <br> First Release <br>2023 / 4 / 17</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">1.0 Version</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/MicrosoftTeams-image (2).png" alt="Portfolio" class="cl-img">
+                                    <p>界面 <br>UI.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/MicrosoftTeams-image (1).png" alt="Portfolio" class="cl-img">
+                                    <p>新增保存Config <br>Add Save Config.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/MicrosoftTeams-image (4).png" alt="Portfolio" class="cl-img">
+                                    <p>刪除Config功能 <br> Delete Config.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/MicrosoftTeams-image (3).png" alt="Portfolio" class="cl-img">
+                                    <p>樣式Pattern列表 <br> Pattern List.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/MicrosoftTeams-image (4).png" alt="Portfolio" class="cl-img">
+                                    <p>設定 <br> Settings.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 2 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">更新UI <br> Remake UI <br>2023 / 6 / 21</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">1.1 Version</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/IMG_1069.PNG" alt="Portfolio" class="cl-img">
+                                    <p>界面 <br>UI.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 3 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">添加 3D Lut <br> Add 3D Lut <br>2023 / 7 / 16</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">1.2 Version</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/IMG_1080.PNG" alt="Portfolio" class="cl-img">
+                                    <p>3D Lut.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 4 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">添加一些適配Ios的東西 <br> Add some ios things <br>2023 / 8 / 01</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">1.3 Version</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/IMG_1071.PNG" alt="Portfolio" class="cl-img">
+                                    <p>可以導入圖片作為Config背景 <br>Can import image to make config background.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/IMG_1073.PNG" alt="Portfolio" class="cl-img">
+                                    <p>可以更改Config 背景顏色 <br>Can change config background color.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 5 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">添加可以增加/減少數值按鈕 <br> Add can increase/decrease value button <br>2023 / 12 / 12</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">1.4 Version</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/IMG_1078.PNG" alt="Portfolio" class="cl-img">
+                                    <p>添加可以增加/減少數值按鈕 <br>Can import image to make config background.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>修復一些Bug <br>Fix some issue bug.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES 6 -->
+                <div class="services-content">
+                    <div>
+                        <i class="fas fa-border-all services-icon"></i>
+                        <h3 class="services-title">更符合直觀的操作 <br> More intuitive operation  <br>2023 / 12 / 14</h3>
+                    </div>
+
+                    <span class="button button-flex button-small button-link services-button">
+                        View More
+                        <i class="fas fa-arrow-right button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <h4 class="services-modal-title">1.5 Version</h4>
+                            <i class="fas fa-times services-modal-close"></i>
+
+                            <div class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/IMG_1076.PNG" alt="Portfolio" class="cl-img">
+                                    <p>更符合直觀的操作 <br>More intuitive operation.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>添加可以直接改保存好的Config名字(无需重新保存).</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>添加可以改保存好的Config颜色.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>添加长按保存好的Config可以直接操作多个选项.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>添加可以再次保存数值在保存好的Config, 覆盖保存好的Config.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <img src="BromptonController/IMG_1070.PNG" alt="Portfolio" class="cl-img">
+                                    <p>修復一些Bug <br>Fix some issue bug.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="uil uil-shield-check services-modal-icon"></i>
+                                    <p>修復保存Config數值不正確 <br>Fix when save config the value is incorrect.</p>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- PROJECT IN MIND -->
+        <section class="project section">
+            <div class="project-bg">
+                <div class="project-container container grid">
+                    <div class="project-data">
+                        <h2 class="project-bg-title">需要了解更多?<br>Need to know more</h2>
+                        <p class="project-bg-description">馬上聯絡我了解更多 <br>Contact me now to learn more</p>
+                        <a href="../index.html#contact" class="button button-flex button-white">
+                            聯絡 | Contact Me
+                            <i class="fab fa-telegram-plane project-icon button-icon"></i>
+                        </a>
+                    </div>
+                    <img src="img/project.png" alt="Project img" class="project-bg-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonial section">
+            <h2 class="section-title">評價 | Review</h2>
+            <span class="section-subtitle">我真實客戶的評價 | My client saying <br>評論可滑動 | Review Can Swap Move</span>
+
+            <div class="testimonial-container container swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- TESTIMONIAL 1 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial1.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">MikeTheTech</h3>
+                                    <span class="testimonial-client">UE Marketplace</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+
+                        </div>
+                        <p class="testimonial-description">該功能不僅按預期運作且運作良好，而且開發人員在 Discord 中很活躍，並且超越並幫助我實現遊戲。 絕對會推薦這個產品。<br>
+                            Not only does this function as expected and work GREAT, but the developer is active in Discord and went above and WELL BEYOND to help me with my game implementation. 
+                            Would absolutely recommend this product. 
+                        </p>
+                    </div>
+                    <!-- TESTIMONIAL 2 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial2.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">ozCROM</h3>
+                                    <span class="testimonial-client">UE Client</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-description">一個出色的插件 - 準備好進行我的頭腦風暴/開發，作為學習工具，或直接進入專案以獲得現成的系統。 非常容易使用。 乾杯。<br>
+                            A brilliant plugin - ready to go for my brainstorming/developing, as a learning tool, or straight into the project for a ready made system. Very easy to use. Cheers.
+                        </p>
+                    </div>
+                    <!-- TESTIMONIAL 3 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial3.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">Raul Harris</h3>
+                                    <span class="testimonial-client">Unreal Review</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-description">在乾淨的項目中完美開箱即用。 開發人員反應非常靈敏且樂於助人——我透過 Discord 聯繫了他，他幫助我解決了我遇到的任何問題。 會推薦。<br>
+                            Works perfectly out of the box in a clean project. Developer is very responsive and helpful too -- 
+                            I contacted him via the Discord and he helped me solve any questions I had. Would recommend. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Add Pagination -->
+                
+            </div>
+        </section>
+           
+
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-container container grid">
+                <div class="footer-texts">
+                    <h1 class="footer-title">PinNumber</h1>
+                    <span class="footer-subtitle">虛幻引擎開發者 | Unreal Engine Developer</span>
+                </div>
+
+                <ul class="footer-links">
+                    <li>
+                        <a href="#product-ue" class="footer-link">虛幻引擎 | Unreal Engine</a>
+                    </li>
+                    <li>
+                        <a href="#java" class="footer-link">Minecraft | Java Product</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="footer-link">其他作品 | other</a>
+                    </li>
+                </ul>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook-f footer-social"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <i class="fab fa-twitter footer-social"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fab fa-instagram footer-social"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copy">&#169; PinNuber. 版權所有 盜版必究 1999-2099 <br>&#169; PinNuber. All right reserved 1999-2099</p>
+        </div>
+    </footer>
+
+    <!-- SCROLL TOP -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up scrollup-icon"></i>
+    </a>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/027d3564f6.js" crossorigin="anonymous"></script>
+
+    <!-- SWIPER JS -->
+    <script src="js/swiper-bundle.js"></script>
+
+
+    <!-- MAIN JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

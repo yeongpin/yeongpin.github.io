@@ -174,6 +174,7 @@ img {
   gap: 1.5rem;
 }
 
+
 /* HEADER */
 .header {
   width: 100%;
@@ -730,11 +731,14 @@ img {
 /* PORTFOLIO */
 .portfolio-container {
   overflow: initial;
+  
 }
 
 .portfolio-container .portfolio-content {
   padding: 0 1.5rem;
+  
 }
+
 
 .portfolio-container .portfolio-content .portfolio-img {
   width: 265px;
@@ -1268,6 +1272,10 @@ img {
   .portfolio-img {
     width: 320px !important;
   }
+  .c-img {
+    width: 520px !important;
+    align-items: center;
+  }
 
   .ue-img {
     top: auto;
@@ -1320,6 +1328,7 @@ img {
   }
   .portfolio-content {
     column-gap: 5rem;
+    
   }
   .swiper-portfolio-icon {
     font-size: 3rem !important;

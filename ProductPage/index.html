@@ -102,6 +102,14 @@
           },
           {
             type: 'li',
+            text: '<i class="fas fa-file-alt nav-link-icon"></i>&nbsp&nbsp&nbspC++ | C++',
+            callback: () => {
+        window.location.href = '#c'
+      },
+      
+          },
+          {
+            type: 'li',
             text: '<i class="uil uil-lottiefiles-alt nav-link-icon"></i>&nbsp&nbsp數據 | Data',
             callback: () => {
         window.location.href = '/DataPage/index.html'
@@ -231,6 +239,11 @@
                     <li class="nav-item">
                         <a href="#portfolio" class="nav-link">
                             <i class="fas fa-image nav-link-icon"></i> OtherProduct
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#c" class="nav-link">
+                            <i class="fas fa-image nav-link-icon"></i> C++
                         </a>
                     </li>
                     <li class="nav-item">
@@ -695,7 +708,37 @@
                 
             </div>
         </section>
-
+         <!-- c++ -->
+        <section class="portfolio section" id="c">
+                    <h2 class="section-title">C++作品 | C++ Product</h2>
+                    <span class="section-subtitle">我的原創作品 | Mine Works</span>
+        
+                    <div class="portfolio-container container swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- PORTFOLIO 1 -->
+                            <div class="portfolio-content grid swiper-slide">
+                                <img src="img/IMG_1069.PNG" alt="Portfolio" class="portfolio-img">
+                                <div class="portfolio-data">
+                                    <h3 class="portfolio-title">Brompton Controller</h3>
+                                    <p class="portfolio-description">Control Brompton Apps</p>
+                                    <a href="../BC/BC.html" target="_blank" class="button button-flex button-small portfolio-button">
+                                        View Product <i class="fas fa-arrow-right button-icon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Arrow -->
+                        <div class="swiper-button-next">
+                            <i class="fas fa-angle-right swiper-portfolio-icon"></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class="fas fa-angle-left swiper-portfolio-icon"></i>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        
+                    </div>
+                </section>
 
         <!-- PROJECT IN MIND -->
         <section class="project section">
